@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:weather_app_figma/constance/ProjectConstanc.dart';
 import 'package:weather_app_figma/models/Weather_Model.dart';
 
 class WeatherServic {
-  final String baseURL = 'http://api.weatherapi.com/v1';
-  final String apiKey = 'f1f1a570e00d457c824102819251905';
   final Dio dio;
 
   WeatherServic(this.dio);

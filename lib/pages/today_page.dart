@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:weather_app_figma/constance/ProjectConstanc.dart';
 import 'package:weather_app_figma/helper/DateTimeParth.dart';
 import 'package:weather_app_figma/models/Weather_Model.dart';
@@ -11,6 +10,7 @@ class TodayPage extends StatelessWidget {
   final WeatherModel weatherModel;
   const TodayPage({required this.weatherModel});
 
+  // @override
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -166,7 +166,12 @@ class TodayPage extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   IconButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                        context,
+                                        '/get_start_page',
+                                      );
+                                    },
                                     icon: Icon(Icons.location_on),
                                     iconSize: 30,
                                     color: Colors.grey,

@@ -8,10 +8,15 @@ import 'package:weather_app_figma/widgets/Custom_Text.dart';
 import 'package:weather_app_figma/widgets/Custom_box_forcast.dart';
 import 'package:weather_app_figma/widgets/Day_Scroller_Forcast.dart';
 
-class ForcastPage extends StatelessWidget {
+class ForcastPage extends StatefulWidget {
   final WeatherModel weatherModel;
   const ForcastPage({super.key, required this.weatherModel});
 
+  @override
+  State<ForcastPage> createState() => _ForcastPageState();
+}
+
+class _ForcastPageState extends State<ForcastPage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -30,11 +35,11 @@ class ForcastPage extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 80),
-              Custom_Text(text: weatherModel.name),
+              Custom_Text(text: widget.weatherModel.name),
               SizedBox(height: 10),
               Custom_Text(
                 text:
-                    'Max: ${weatherModel.maxTemp}°   Min: ${weatherModel.minTemp}°',
+                    'Max: ${widget.weatherModel.maxTemp}°   Min: ${widget.weatherModel.minTemp}°',
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -46,7 +51,7 @@ class ForcastPage extends StatelessWidget {
                   ),
                 ),
               ),
-              DaysScroller(weatherModel: weatherModel),
+              DaysScroller(weatherModel: widget.weatherModel),
 
               SizedBox(height: 30),
               Container(
@@ -159,8 +164,8 @@ class ForcastPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Custom_Box_Forcast(
                         title: 'SUNRISE',
-                        firstText: weatherModel.sunrise,
-                        secondText: 'Sunset: ${weatherModel.sunset}',
+                        firstText: widget.weatherModel.sunrise,
+                        secondText: 'Sunset: ${widget.weatherModel.sunset}',
                         fontsize_secondText: 14,
                       ),
                     ),
@@ -168,8 +173,10 @@ class ForcastPage extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Custom_Box_Forcast(
                         title: 'UV INDEX',
-                        firstText: '${weatherModel.uv}',
-                        secondText: getUvLevelDescription(weatherModel.uv),
+                        firstText: '${widget.weatherModel.uv}',
+                        secondText: getUvLevelDescription(
+                          widget.weatherModel.uv,
+                        ),
                       ),
                     ),
                   ],

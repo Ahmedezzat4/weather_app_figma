@@ -12,4 +12,18 @@ class HourModel {
       hour: json['time'],
     );
   }
+  factory HourModel.fromCache(Map<String, dynamic> json) {
+    return HourModel(
+      temp: json['temp_c'],
+      image: json['condition']['icon'],
+      hour: json['time'],
+    );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      'temp_c': temp,
+      'condition': {'icon': image},
+      'time': hour,
+    };
+  }
 }

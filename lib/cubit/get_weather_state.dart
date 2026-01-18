@@ -3,9 +3,15 @@ part of 'get_weather_cubit.dart';
 @immutable
 sealed class GetWeatherState {}
 
-final class GetWeatherCubitInitial extends GetWeatherState {}
+class GetWeatherCubitInitial extends GetWeatherState {
+  final WeatherModel? cachedWeather;
+  GetWeatherCubitInitial({this.cachedWeather});
+}
 
-class WeatherLoading extends GetWeatherState {}
+class WeatherLoading extends GetWeatherState {
+  final WeatherModel? cachedWeather;
+  WeatherLoading(this.cachedWeather);
+}
 
 class WeatherLoadedState extends GetWeatherState {
   final WeatherModel weatherModel;
@@ -13,8 +19,16 @@ class WeatherLoadedState extends GetWeatherState {
   WeatherLoadedState({required this.weatherModel});
 }
 
+class WeatherPermissionDeniedState extends GetWeatherState {}
+
+class WeatherNeedLocation extends GetWeatherState {}
+
 class WeatherFailureState extends GetWeatherState {
   final String errorMessage;
+  final WeatherModel? cachedWeather;
 
-  WeatherFailureState({this.errorMessage = "Failed to fetch weather data."});
+  WeatherFailureState({
+    this.errorMessage = "Failed to fetch weather data.",
+    this.cachedWeather,
+  });
 }
