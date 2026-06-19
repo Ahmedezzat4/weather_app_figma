@@ -210,10 +210,19 @@ _scrollController.animateTo(
 
 ## 📱 Screenshots
 
-- **Welcome Page**: Location setup screen with gradient background
-- **Today Page**: Current weather with details (temperature, UV, sunrise/sunset)
-- **Forecast Page**: 7-day and hourly weather predictions
-- **Animated Scrollers**: Smooth left/right navigation through forecasts
+- **Offline Cached Dashboard**: Launches instantly with locally cached weather data for offline access
+<img src="assets/Screenshots/Offline Cached Dashboard.jpeg" width="300">
+- **Search Page**: Global search interface to look up any city's weather.
+<img src="assets/Screenshots/search page.jpeg" width="300">
+- **Autocomplete Search**: Smart typeahead feature predicting city names in real time as you type
+<img src="assets/Screenshots/Autocomplete search.jpeg" width="300">
+- **Dynamic Search Results View**: Detailed display showing 7-day forecasts, AQI, and UV index upon city selection.
+<img src="assets/Screenshots/Dynamic Search Results View.jpeg" width="300">
+- **Get Start Location Page**: Onboarding screen guiding users to set their default city.
+<img src="assets/Screenshots/get start location  page.jpeg" width="300">
+- **Dynamic Search Results View**: GPS prompt to automatically detect and display local weather data.
+<img src="assets/Screenshots/location permission.jpeg" width="300">
+
 
 ## 🔐 Security Notes
 
